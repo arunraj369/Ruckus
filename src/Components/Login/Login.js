@@ -4,13 +4,16 @@ import loginimg from "../assets/Login1.png";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+// import Redirect from "react-router-dom";
 
 function Login() {
   const [loginUser, setloginUser] = useState({
     loginEmail: "",
     loginPassword: "",
   });
+
+  const [loggedIn, setLoggedIn] = useState(false);
 
   function handleChange(e) {
     const newloginUser = { ...loginUser };
@@ -39,6 +42,7 @@ function Login() {
 
       if (validateUser) {
         toast.success("Login successfully");
+        setLoggedIn(true);
       } else {
         toast.error("Incorrect Email or Password");
         setloginUser({
@@ -106,11 +110,11 @@ function Login() {
             </form>
             <ToastContainer />
           </div>
-          <div className="d-flex flex-row">
-            <p>Create New Account</p>
-
+          <div className="d-flex flex-row mt-3" style={{ marginLeft: "20%" }}>
+            <p style={{ marginRight: "3%" }}>Create New Account</p>
             <Link to="/signup">Signup</Link>
           </div>
+          {loggedIn && <Navigate to="/home" />}
         </div>
       </div>
     </div>
