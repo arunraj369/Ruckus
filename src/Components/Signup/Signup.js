@@ -91,8 +91,8 @@ function Signup() {
             </form>
             <ToastContainer />
           </div>
-          <div className="d-flex flex-row">
-            <p>Already i have Account</p>
+          <div className="d-flex flex-row mt-3" style={{ marginLeft: "20%" }}>
+            <p style={{ marginRight: "3%" }}>Already i have Account</p>
 
             <Link to="/login">login</Link>
           </div>
