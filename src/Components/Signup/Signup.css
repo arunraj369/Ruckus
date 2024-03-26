@@ -1,0 +1,32 @@
+.card {
+  width: 70%;
+  height: 70%;
+  position: absolute;
+  top: 15%; /* Positioning the card 30% from the top of its containing parent */
+  left: 15%; /* Centering the card horizontally */
+  border-radius: 25px;
+}
+
+.container-fluid {
+  position: relative; /* Ensure the container serves as the containing parent for the absolutely positioned card */
+  height: 100vh;
+  background-color: #6358dc;
+}
+.img_div {
+  width: 50%;
+  background-color: #e5e5e5;
+  border-radius: 25px;
+}
+.loginform_div {
+  width: 50%;
+  background-color: white;
+  border-radius: 30px;
+  margin-right: 3%;
+  height: 25rem;
+}
+.logimg {
+  width: 100%;
+}
+.form-label {
+  font-weight: bold;
+}
