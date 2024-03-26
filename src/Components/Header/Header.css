@@ -1,0 +1,5 @@
+.nav-link:hover {
+  transition: transform 350ms;
+  transform: translateY(-10px);
+  text-decoration: underline;
+}
