@@ -4,7 +4,7 @@ import loginimg from "../assets/Signup.png";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import { Link } from "react-router-dom";
 function Signup() {
   const [User, setUser] = useState({
     email: "",
@@ -90,6 +90,11 @@ function Signup() {
               </button>
             </form>
             <ToastContainer />
+          </div>
+          <div className="d-flex flex-row">
+            <p>Already i have Account</p>
+
+            <Link to="/login">login</Link>
           </div>
         </div>
       </div>

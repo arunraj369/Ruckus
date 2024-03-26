@@ -4,6 +4,7 @@ import loginimg from "../assets/Login1.png";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Link } from "react-router-dom";
 
 function Login() {
   const [loginUser, setloginUser] = useState({
@@ -104,6 +105,11 @@ function Login() {
               </button>
             </form>
             <ToastContainer />
+          </div>
+          <div className="d-flex flex-row">
+            <p>Create New Account</p>
+
+            <Link to="/signup">Signup</Link>
           </div>
         </div>
       </div>
