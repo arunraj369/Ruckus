@@ -43,11 +43,14 @@ function Signup() {
         class="card row flex-md-row flex-column"
         style={{ backgroundColor: "  #e5e5e5", borderRadius: "25px" }}
       >
-        <div class="col-md img_div">
+        {/* <div class="col img_div">
           <img src={loginimg} alt="no-img" className="logimg" />
+        </div> */}
+        <div class="col img_div d-flex justify-content-center align-items-center">
+          <img src={loginimg} alt="no-img" class="img-fluid logimg" />
         </div>
 
-        <div class="col-md loginform_div mt-3">
+        <div class="col loginform_div mt-3">
           <div style={{ textAlign: "center", marginTop: "7%" }}>
             <h3>Signup</h3>
           </div>
