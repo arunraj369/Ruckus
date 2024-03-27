@@ -4,12 +4,14 @@ import loginimg from "../assets/Signup.png";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 function Signup() {
   const [User, setUser] = useState({
     email: "",
     password: "",
   });
+
+  const [SignnedIn, setSignnedIn] = useState(false);
 
   const signUpData = async (e) => {
     e.preventDefault();
@@ -22,8 +24,10 @@ function Signup() {
     try {
       await axios.post("http://localhost:3001/User", User);
       toast.success("User registered successfully!");
-      //   alert("User registered successfully!");
-      setUser({ email: "", password: "" }); // Clear form fields after submission
+      setUser({ email: "", password: "" });
+      setTimeout(() => {
+        setSignnedIn(true);
+      }, 3000);
     } catch (error) {
       console.error("Error registering user:", error);
       toast.error("Error registering user. Please try again.");
@@ -99,6 +103,7 @@ function Signup() {
 
             <Link to="/login">login</Link>
           </div>
+          {SignnedIn && <Navigate to="/login" />}
         </div>
       </div>
     </div>
