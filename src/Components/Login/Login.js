@@ -59,7 +59,7 @@ function Login() {
   return (
     <div class="container-fluid">
       <div
-        class="card row flex-md-row flex-column"
+        class="cards row flex-md-row flex-column"
         style={{ backgroundColor: "  #e5e5e5", borderRadius: "25px" }}
       >
         <div class="col-md img_div">

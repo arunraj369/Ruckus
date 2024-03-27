@@ -28,6 +28,12 @@ function Header() {
             <Nav.Link as={Link} to="/Topology">
               <h6 style={{ color: "#ffffff" }}>Topology</h6>
             </Nav.Link>
+            <Nav.Link as={Link} to="/Diagram">
+              <h6 style={{ color: "#ffffff" }}>Diagram</h6>
+            </Nav.Link>
+            <Nav.Link as={Link} to="/AppInfo">
+              <h6 style={{ color: "#ffffff" }}>AppInfo</h6>
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
