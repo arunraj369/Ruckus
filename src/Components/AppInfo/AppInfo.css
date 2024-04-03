@@ -1,0 +1,28 @@
+.body {
+    margin: 100px;
+    background-color: rgba(0, 0, 0, 0.01);
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-body{
+    /* background-color: antiquewhite; */
+    width: '100%';
+    
+}
+.card-title{
+    text-align: center;
+    color: #420075;
+}
+.card-text{
+    padding: 20px;
+}
+
+span{
+    font-size:20px;
+    color:black;
+    /* padding-left: 80px; */
+    font-weight: bold;
+}

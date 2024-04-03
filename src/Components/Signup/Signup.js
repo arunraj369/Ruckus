@@ -44,7 +44,7 @@ function Signup() {
   return (
     <div class="container-fluid">
       <div
-        class="card row flex-md-row flex-column"
+        class="cards row flex-md-row flex-column"
         style={{ backgroundColor: "  #e5e5e5", borderRadius: "25px" }}
       >
         {/* <div class="col img_div">
@@ -100,8 +100,7 @@ function Signup() {
           </div>
           <div className="d-flex flex-row mt-3" style={{ marginLeft: "20%" }}>
             <p style={{ marginRight: "3%" }}>Already i have Account</p>
-
-            <Link to="/login">login</Link>
+            <Link to="/login">Login</Link>
           </div>
           {SignnedIn && <Navigate to="/login" />}
         </div>
