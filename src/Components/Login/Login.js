@@ -31,9 +31,9 @@ function Login() {
     }
 
     try {
-      const response = await axios.get("http://localhost:3001/User");
+      const response = await axios.get("http://localhost:3001/logUser");
       const users = response.data;
-
+      console.log(users);
       const validateUser = users.find(
         (user) =>
           user.email === loginUser.loginEmail &&
