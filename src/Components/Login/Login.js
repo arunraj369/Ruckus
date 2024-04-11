@@ -62,11 +62,18 @@ function Login() {
         class="cards row flex-md-row flex-column"
         style={{ backgroundColor: "  #e5e5e5", borderRadius: "25px" }}
       >
-        <div class="col-md img_div">
+        {/* <div class="col " id="img_div">
           <img src={loginimg} alt="no-img" className="logimg" />
+        </div> */}
+
+        <div
+          class="col d-flex justify-content-center align-items-center"
+          id="img_div"
+        >
+          <img src={loginimg} alt="no-img" className="img-fluid logimg" />
         </div>
 
-        <div class="col-md loginform_div mt-3">
+        <div class="col  mt-3" id="loginform_div">
           <div style={{ textAlign: "center", marginTop: "7%" }}>
             <h3>Login</h3>
           </div>

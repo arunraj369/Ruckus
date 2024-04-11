@@ -4,12 +4,14 @@ import loginimg from "../assets/Signup.png";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 function Signup() {
   const [User, setUser] = useState({
     email: "",
     password: "",
   });
+
+  const [SignnedIn, setSignnedIn] = useState(false);
 
   const signUpData = async (e) => {
     e.preventDefault();
@@ -22,8 +24,10 @@ function Signup() {
     try {
       await axios.post("http://localhost:3001/User", User);
       toast.success("User registered successfully!");
-      //   alert("User registered successfully!");
-      setUser({ email: "", password: "" }); // Clear form fields after submission
+      setUser({ email: "", password: "" });
+      setTimeout(() => {
+        setSignnedIn(true);
+      }, 3000);
     } catch (error) {
       console.error("Error registering user:", error);
       toast.error("Error registering user. Please try again.");
@@ -43,11 +47,14 @@ function Signup() {
         class="cards row flex-md-row flex-column"
         style={{ backgroundColor: "  #e5e5e5", borderRadius: "25px" }}
       >
-        <div class="col-md img_div">
+        {/* <div class="col img_div">
           <img src={loginimg} alt="no-img" className="logimg" />
+        </div> */}
+        <div class="col img_div d-flex justify-content-center align-items-center">
+          <img src={loginimg} alt="no-img" class="img-fluid logimg" />
         </div>
 
-        <div class="col-md loginform_div mt-3">
+        <div class="col loginform_div mt-3">
           <div style={{ textAlign: "center", marginTop: "7%" }}>
             <h3>Signup</h3>
           </div>
@@ -93,8 +100,10 @@ function Signup() {
           </div>
           <div className="d-flex flex-row mt-3" style={{ marginLeft: "20%" }}>
             <p style={{ marginRight: "3%" }}>Already i have Account</p>
-            <Link to="/login">Login</Link>
+
+            <Link to="/login">login</Link>
           </div>
+          {SignnedIn && <Navigate to="/login" />}
         </div>
       </div>
     </div>
