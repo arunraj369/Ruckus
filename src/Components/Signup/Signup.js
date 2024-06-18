@@ -5,8 +5,11 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link, Navigate } from "react-router-dom";
+
+
 function Signup() {
   const [User, setUser] = useState({
+    username:"",
     email: "",
     password: "",
   });
@@ -24,7 +27,7 @@ function Signup() {
     try {
       await axios.post("http://localhost:3001/User", User);
       toast.success("User registered successfully!");
-      setUser({ email: "", password: "" });
+      setUser({ username:"",email: "", password: "" });
       setTimeout(() => {
         setSignnedIn(true);
       }, 3000);
@@ -60,6 +63,20 @@ function Signup() {
           </div>
           <div className="mt-5">
             <form>
+              <div className="mb-3">
+                <label htmlFor="username" className="form-label">
+                  Username
+                </label>
+                <input
+                  type="username"
+                  className="form-control"
+                  id="username"
+                  aria-describedby="emailHelp"
+                  placeholder="Enter username"
+                  value={User.username}
+                  onChange={(e) => handleChange(e)}
+                />
+              </div>
               <div className="mb-3">
                 <label htmlFor="email" className="form-label">
                   Email address

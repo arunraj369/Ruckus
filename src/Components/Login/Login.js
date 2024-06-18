@@ -4,7 +4,7 @@ import loginimg from "../assets/Login1.png";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate,useNavigate } from "react-router-dom";
 // import Redirect from "react-router-dom";
 
 function Login() {
@@ -13,6 +13,7 @@ function Login() {
     loginPassword: "",
   });
 
+  const navigate = useNavigate();
   const [loggedIn, setLoggedIn] = useState(false);
 
   function handleChange(e) {
@@ -33,16 +34,18 @@ function Login() {
     try {
       const response = await axios.get("http://localhost:3001/logUser");
       const users = response.data;
-      console.log(users);
+      console.log(users,'------------------------------ login user');
       const validateUser = users.find(
         (user) =>
           user.email === loginUser.loginEmail &&
           user.password === loginUser.loginPassword
       );
-
-      if (validateUser) {
+      console.log('users',loginUser.loginEmail,loginUser.loginPassword);
+      if (validateUser) {   
+        console.log(validateUser.username,'-------validate User');    
         toast.success("Login successfully");
-        setLoggedIn(true);
+        navigate('/Topology',{state:{name:validateUser.username}});
+        // setLoggedIn(true);
       } else {
         toast.error("Incorrect Email or Password");
         setloginUser({
@@ -121,7 +124,8 @@ function Login() {
             <p style={{ marginRight: "3%" }}>Create New Account</p>
             <Link to="/signup">Signup</Link>
           </div>
-          {loggedIn && <Navigate to="/home" />}
+          {/* {loggedIn && <Navigate to="/Topology" state={{ names: names }} />}      */}
+          {/* /home */}
         </div>
       </div>
     </div>

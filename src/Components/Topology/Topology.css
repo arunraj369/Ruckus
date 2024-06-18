@@ -24,7 +24,7 @@ body{
   }
   
   .card img{
-    position: absolute;
+    position: relative;
     top: 20px;
     right: 15px;
     max-height: 120px;
@@ -32,15 +32,15 @@ body{
   
   .card-1{
     background-image: url(https://ionicframework.com/img/getting-started/ionic-native-card.png);
-        background-repeat: no-repeat;
-      background-position: right;
-      background-size: 80px;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 80px;
     margin-top: 10%;
   }
   
   .card-2{
      background-image: url(https://ionicframework.com/img/getting-started/components-card.png);
-        background-repeat: no-repeat;
+      background-repeat: no-repeat;
       background-position: right;
       background-size: 80px;
       margin-top: 10%;
@@ -48,7 +48,7 @@ body{
   
   .card-3{
      background-image: url(https://ionicframework.com/img/getting-started/theming-card.png);
-        background-repeat: no-repeat;
+      background-repeat: no-repeat;
       background-position: right;
       background-size: 80px;
       margin-top: 10%;

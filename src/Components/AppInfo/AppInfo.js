@@ -1,11 +1,13 @@
 import React from "react";
 import './AppInfo.css';
 import Header from "../Header/Header";
+import {useLocation,useNavigate } from 'react-router-dom'
 
 function AppInfo(){
+    const location = useLocation();
     return(
         <div>
-        <Header />
+        <Header data={location.state?.name || 'Default User'} />
         <div class="body" >
             <div class="card-body">
                 <h3 class="card-title">APP INFO</h3>
